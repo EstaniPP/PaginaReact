@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/PaginaReact/static/js/main.fc43edbd.chunk.js",
+    "main.js.map": "/PaginaReact/static/js/main.fc43edbd.chunk.js.map",
+    "runtime-main.js": "/PaginaReact/static/js/runtime-main.8baaaf65.js",
+    "runtime-main.js.map": "/PaginaReact/static/js/runtime-main.8baaaf65.js.map",
+    "static/js/2.bf013692.chunk.js": "/PaginaReact/static/js/2.bf013692.chunk.js",
+    "static/js/2.bf013692.chunk.js.map": "/PaginaReact/static/js/2.bf013692.chunk.js.map",
+    "index.html": "/PaginaReact/index.html",
+    "precache-manifest.5e47479d31103f8a191998bd94b453ff.js": "/PaginaReact/precache-manifest.5e47479d31103f8a191998bd94b453ff.js",
+    "service-worker.js": "/PaginaReact/service-worker.js",
+    "static/js/2.bf013692.chunk.js.LICENSE.txt": "/PaginaReact/static/js/2.bf013692.chunk.js.LICENSE.txt",
+    "static/media/4045.jpg": "/PaginaReact/static/media/4045.e32e5758.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8baaaf65.js",
+    "static/js/2.bf013692.chunk.js",
+    "static/js/main.fc43edbd.chunk.js"
+  ]
+}
