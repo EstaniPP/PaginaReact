@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Markdown from './Markdown';
+import Pagination from './Pagination';
 
 const useStyles = makeStyles((theme) => ({
   markdown: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Main(props) {
   const classes = useStyles();
-  const { posts, title } = props;
+  const { posts, title, increment, decrement, offSet } = props;
 
   return (
     <Grid item xs={12} md={8}>
@@ -23,11 +24,13 @@ export default function Main(props) {
         {title}
       </Typography>
       <Divider />
+      <Pagination increment={increment} decrement={decrement} offSet={offSet}/>
       {posts.map((post) => (
         <Markdown className={classes.markdown} key={post.id}>
           {post.body}
         </Markdown>
       ))}
+      <Pagination increment={increment} decrement={decrement} offSet={offSet}/>
     </Grid>
   );
 }

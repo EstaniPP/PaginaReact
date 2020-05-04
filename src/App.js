@@ -90,6 +90,8 @@ export default class Blog extends Component {
   state = {
     posts : [],
     postsToShow : [],
+    first20Posts : [],
+    offset: 0,
     results: 'Se muestran todos los resultados',
     description: ''
   }
@@ -97,13 +99,17 @@ export default class Blog extends Component {
   filterPost = (func, results)=> {
     const postsToShow = func(this.state.posts)
     this.setState({postsToShow: postsToShow})
+    this.setState({first20Posts: postsToShow.slice(0,20)})
+    this.setState({offSet:0})
     this.setState({results: results})
   }
+
   async componentDidMount(){
       const res = await fetch('https://jsonplaceholder.typicode.com/posts')
       const data = await res.json();
       this.setState({posts: data.map((e) => { return {key: e.id, body: "".concat("#",e.title," ",e.body)} })})
       this.setState({postsToShow: data.map((e) => { return {key: e.id, body: "".concat("#",e.title," ",e.body)} })})
+      this.setState({first20Posts: data.slice(0,20).map((e) => { return {key: e.id, body: "".concat("#",e.title," ",e.body)} })})
 
       const aboutRes = await fetch('https://api.github.com/repos/EstaniPP/PaginaReact/readme')
       const aboutData = await aboutRes.json();
@@ -111,6 +117,25 @@ export default class Blog extends Component {
       this.setState({description: aboutFinal});
   }
 
+  increment = () => {
+      const lastOffset = this.state.offset
+      const postsToShow = this.state.postsToShow
+      if(lastOffset < postsToShow.length-20){
+        this.setState({offset : lastOffset+20})
+        const postsToShow = this.state.postsToShow.slice(lastOffset+20,lastOffset+40);
+        this.setState({first20Posts : postsToShow })
+      }
+  }
+
+  
+  decrement = () => {
+    const lastOffset = this.state.offset
+    if(lastOffset > 0){
+      this.setState({offset : lastOffset-20})
+      const postsToShow = this.state.postsToShow.slice(lastOffset-20,lastOffset-0);
+      this.setState({first20Posts : postsToShow })
+    }
+  }
 
   render(){
 
@@ -127,7 +152,7 @@ export default class Blog extends Component {
             ))}
           </Grid>
           <Grid container spacing={5}>
-            <Main title={this.state.results} posts={this.state.postsToShow} />
+            <Main title={this.state.results} posts={this.state.first20Posts} offSet={this.state.offset} increment={this.increment} decrement={this.decrement} />
             <Sidebar
               title={sidebar.title}
               description={this.state.description}
