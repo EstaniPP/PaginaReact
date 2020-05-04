@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e48f43e33a6092af2a85f11527f42cd1",
+    "revision": "c059b13c3c1840d54cfb0cec333373cb",
     "url": "/PaginaReact/index.html"
   },
   {
-    "revision": "a4382b9a538c65ede8fa",
-    "url": "/PaginaReact/static/js/2.bf013692.chunk.js"
+    "revision": "d63daa0a85e8551b8c70",
+    "url": "/PaginaReact/static/js/2.d42e70c1.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/PaginaReact/static/js/2.bf013692.chunk.js.LICENSE.txt"
+    "url": "/PaginaReact/static/js/2.d42e70c1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f8c1ea4014f0d3565df6",
-    "url": "/PaginaReact/static/js/main.fc43edbd.chunk.js"
+    "revision": "1a4bf1042fc584160cdb",
+    "url": "/PaginaReact/static/js/main.ba1accb4.chunk.js"
   },
   {
     "revision": "63c27f28541fb7bc2268",
